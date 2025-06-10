@@ -14,7 +14,7 @@ import {
 // @icons
 import { Menu, Xmark } from "iconoir-react";
 
-const NAV_LIST = ["About Us", "Pricing", "Contact Us"];
+const NAV_LIST = ["Newsfeed", "Discover","Watchlist", "About Us", "Privacy Policy", "Terms of Service"];
 
 function NavList() {
   return (
@@ -60,7 +60,7 @@ export default function Navbar10() {
             type="lead"
             className="block py-1 font-semibold"
           >
-            Material Tailwind
+            Simply Alpha
           </Typography>
           <div className="hidden lg:block  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <NavList />
