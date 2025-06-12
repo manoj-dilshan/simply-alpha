@@ -1,21 +1,37 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Search, Menu, X } from "lucide-react";
 import Link from "next/link";
 import SearchInput from "./search-input";
 import ToggleMode from "./toggle-mode";
 import { Input } from "@/components/ui/input";
+
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   SignUpButton,
   UserButton,
+  useUser
 } from "@clerk/nextjs";
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isSignedIn, user } = useUser();
+  const [role, setRole] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchRole = async () => {
+      if (!user) return;
+
+      const res = await fetch("/api/user-role");
+      const data = await res.json();
+      setRole(data.role);
+    };
+
+    fetchRole();
+  }, [user]);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -35,8 +51,10 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-4">
+               {isSignedIn && (
+                <>
               <Link
-                href="/news"
+                href="/newsfeed"
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Newsfeed
@@ -65,12 +83,12 @@ export function Navbar() {
               >
                 About Us
               </Link>
-              <Link
-                href="/dashboard"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Dashboard
-              </Link>
+               </>)}
+              {role === "admin" && (
+                <Link href="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+                  Dashboard
+                </Link>
+              )}
             </div>
           </div>
 
@@ -138,25 +156,25 @@ export function Navbar() {
                 Articles
               </Link>
               <Link
-                href="/tutorials"
+                href="/newsfeed"
                 className="block px-3 py-2 text-base font-medium text-foreground"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Tutorials
+                Newsfeed
               </Link>
               <Link
                 href="/about"
                 className="block px-3 py-2 text-base font-medium text-foreground"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                About Us
               </Link>
               <Link
-                href="/dashboard"
+                href="/discover"
                 className="block px-3 py-2 text-base font-medium text-foreground"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Dashboard
+                Discover
               </Link>
             </div>
 
