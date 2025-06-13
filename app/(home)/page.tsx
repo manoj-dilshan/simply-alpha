@@ -17,8 +17,6 @@ export default function Home() {
               Discover our most popular and trending content
             </p>
           </div>
-
-          {/* Top Articles */}
           <div>
             <TopArticles />
           </div>
