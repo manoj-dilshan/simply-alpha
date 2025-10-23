@@ -295,4 +295,4 @@ Pull requests are welcome. For major changes, open an issue first to discuss wha
 This project is for **educational purposes**. Stock market predictions are inherently uncertain. **Do not** use this application as financial advice. Use at your own risk.
 
 ## License
-Licensed under the **Apache License, Version 2.0**. See [`LICENSE`](./LICENSE) for details.
+Licensed under the **Apache License, Version 2.0**. See [`LICENSE`](./LICENSE) and [`NOTICE`](./NOTICE) for details.
