@@ -1,0 +1,98 @@
+# Root .gitignore for simply-alpha monorepo
+# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+############################
+# Frontend (Next.js / Node)
+############################
+node_modules/
+.pnp/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testing
+coverage/
+
+# Next.js build output
+.next/
+out/
+build/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel/
+
+# Env files (opt-in only if you intend to commit)
+.env*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+############################
+# Backend (Python / Django)
+############################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+
+# Django
+*.log
+local_settings.py
+celerybeat-schedule
+celerybeat.pid
+
+# Databases & migrations cache
+*.sqlite3
+*.db
+
+# Media & static (generated)
+media/
+staticfiles/
+
+# Python env files
+ai-stock-api/.env
+
+############################
+# Common OS / IDE / Secrets
+############################
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.pem
+*.key
+*.crt
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# Test caches
+.pytest_cache/
+htmlcov/
+
+# Azure / Deployment
+*.publishsettings
+*.pubxml
+
+# Misc temp
+.tmp/
+.temp/
+
