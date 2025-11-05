@@ -67,7 +67,7 @@ media/
 staticfiles/
 
 # Python env files
-ai-stock-api/.env
+ai-simply-alpha-api/.env
 
 ############################
 # Common OS / IDE / Secrets
