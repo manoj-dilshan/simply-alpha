@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
 import { Search, Bell, Menu, X, ChevronDown, User, CreditCard, Mail, LogOut, LayoutDashboard, Building2, Briefcase, TrendingUp, Moon, Sun } from 'lucide-react';
