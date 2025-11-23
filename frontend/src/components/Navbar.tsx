@@ -367,20 +367,6 @@ export default function NavbarDemo() {
                 </div>
               )}
             </div>
-
-            <div className="mt-8 p-4 bg-muted rounded-lg">
-              <h3 className="font-semibold mb-2">Features:</h3>
-              <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                <li>Fully responsive with mobile menu</li>
-                <li>Guest vs. Logged-in states</li>
-                <li>Admin-specific menu items</li>
-                <li>Search bar with icon</li>
-                <li>Notification bell with indicator</li>
-                <li>User avatar dropdown</li>
-                <li>More menu with company links</li>
-                <li>Clean fintech aesthetics</li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
