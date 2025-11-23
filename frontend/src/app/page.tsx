@@ -1,12 +1,10 @@
-import Image from "next/image";
 import Navbar from '@/components/Navbar';
+import './globals.css';
 
-export default function Home() {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-     <>
-      <Navbar  />
-      <div className="bg-primary text-primary-foreground">Hello</div>
-    </>
-    
+      <body>
+        {children}
+      </body>
   );
 }
